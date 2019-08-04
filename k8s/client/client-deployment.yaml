@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: stephengrider/multi-client
+        image: afsan007/multi-client
         resources:
           limits:
             memory: "128Mi"
