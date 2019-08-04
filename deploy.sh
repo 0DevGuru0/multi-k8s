@@ -10,12 +10,12 @@ docker push afsan007/multi-client:$SHA
 docker push afsan007/multi-server:$SHA
 docker push afsan007/multi-worker:$SHA
 
-docker apply -f k8s/client
-docker apply -f k8s/database
-docker apply -f k8s/postgres
-docker apply -f k8s/redis
-docker apply -f k8s/server
-docker apply -f k8s/worker
+kubectl apply -f k8s/client
+kubectl apply -f k8s/database
+kubectl apply -f k8s/postgres
+kubectl apply -f k8s/redis
+kubectl apply -f k8s/server
+kubectl apply -f k8s/worker
 
 kubectl set image deployments/server-deployment server=afsan007/multi-server:$SHA
 kubectl set image deployments/client-deployment client=afsan007/multi-client:$SHA
